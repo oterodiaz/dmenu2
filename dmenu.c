@@ -435,8 +435,8 @@ keypress(XKeyEvent *ev) {
 			while(cursor > 0 && text[nextrune(-1)] != ' ' && text[nextrune(-1)] != '/')
 				insert(NULL, nextrune(-1) - cursor);
 			break;
-		case XK_y: /* fallthrough */
-		case XK_Y: /* paste selection */
+		case XK_V: /* fallthrough */
+		case XK_v: /* paste selection */
 			XConvertSelection(dc->dpy, (ev->state & ShiftMask) ? clip : XA_PRIMARY,
 			                  utf8, utf8, win, CurrentTime);
 			return;
